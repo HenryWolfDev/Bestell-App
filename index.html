@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      href="assets/Favicon/favicon-16x16.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="globalSettings.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bestell App</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="assets/Logo/Bestell App- Logo.svg" alt="" class="logo" />
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="content-wrapper">
+          <section class="content">
+            <div class="content-hero">
+              <div>
+                <img
+                  src="assets/images/food-hero.jpg"
+                  alt=""
+                  class="hero-picture"
+                />
+              </div>
+              <div class="hero-app-info">
+                <h2>Pizza - Makarna</h2>
+                <span>Bewertung (4.6 von 5 Sternen)</span>
+              </div>
+
+              <img src="assets/Logo/app-logo.jpg" alt="" class="app-logo" />
+            </div>
+            <div class="navigation-bar">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="nav-icon"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M184 112l144 144-144 144"
+                  />
+                </svg>
+              </div>
+              <nav>
+                <ul>
+                  <li><a href="#Main">Hauptgerichte</a></li>
+                  <li><a href="#Side">Beilagen</a></li>
+                  <li><a href="#Desserts">Desserts</a></li>
+                  <li><a href="#Drinks">Getränke</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- #region MENU-BOX -->
+            <div id="Main" class="menu-box">
+              <img
+                src="assets/images/main-courses-logo.jpg"
+                alt=""
+                class="menu-dish-logo"
+              />
+              <h2>Hauptgerichte</h2>
+              <div id="main-courses" class="flex-column"></div>
+            </div>
+            <div id="Side" class="menu-box">
+              <img
+                src="assets/images/side-dishes-logo.jpg"
+                alt=""
+                class="menu-dish-logo"
+              />
+              <h2>Beilagen</h2>
+              <div id="side-dishes" class="flex-column"></div>
+            </div>
+            <div id="Desserts" class="menu-box">
+              <img
+                src="assets/images/dessert-logo.jpg"
+                alt=""
+                class="menu-dish-logo"
+              />
+              <h2>Desserts</h2>
+              <div id="desserts" class="flex-column"></div>
+            </div>
+            <div id="Drinks" class="menu-box">
+              <img
+                src="assets/images/drinks-logo.jpg"
+                alt=""
+                class="menu-dish-logo"
+              />
+              <h2>Getränke</h2>
+              <div id="drinks" class="flex-column"></div>
+            </div>
+            <!-- #endregion MENU-BOX -->
+          </section>
+
+          <!-- #region Warenkorb -->
+          <section class="basket-wrapper">
+            <div class="basket">
+              <div class="basket-title">
+                <h2>Warenkorb</h2>
+              </div>
+            </div>
+          </section>
+          <!-- #endregion Warenkorb -->
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">footer</div>
+    </footer>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
