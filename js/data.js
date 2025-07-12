@@ -123,3 +123,5 @@ export const menuItems = [
     category: "Getränke",
   },
 ];
+
+export const basket = [];
