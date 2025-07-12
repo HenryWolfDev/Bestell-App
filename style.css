@@ -1,25 +1,27 @@
 header {
-  background-color: red;
+  background-color: #ff581a;
   padding: 1rem;
+  border-bottom: 0.2rem solid rgb(121, 121, 121);
 
   .logo {
     color: white;
     width: 20rem;
-    height: 8rem;
+    height: 6rem;
   }
 }
 
 .content-wrapper {
   display: flex;
   align-items: stretch;
+  gap: 1rem;
+  background-color: rgb(244, 242, 242);
 }
 
 .content {
   width: 75%;
-  border: 0.2rem solid black;
 
   .content-hero {
-    height: 300px;
+    height: 315px;
 
     .hero-picture {
       width: 100%;
@@ -33,25 +35,27 @@ header {
       object-fit: cover;
       border-radius: 13rem;
       position: absolute;
-      top: 40%;
+      top: 65%;
       left: 50%;
+      transform: translate(-50%, -50%);
       border: 0.2rem solid rgb(255, 255, 255);
     }
 
     .hero-app-info {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      padding-left: 1rem;
+      gap: 1.5rem;
+      padding-left: 3rem;
 
       h2 {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         padding-top: 2rem;
       }
 
       span {
-        font-size: 1.6rem;
-        color: rgb(215, 188, 36);
+        font-size: 1.8rem;
+        color: #ff581a;
+        font-weight: 500;
       }
     }
   }
@@ -59,22 +63,26 @@ header {
   .navigation-bar {
     display: flex;
     align-items: center;
-    background-color: beige;
-    padding: 1.4rem 1rem;
+    background-color: #ffdacc;
+    padding: 0 1rem;
 
     .nav-icon {
-      width: 3rem;
-      height: 3rem;
-      color: black;
+      width: 6rem;
+      height: 6rem;
+      color: #ff581a;
     }
     ul {
       display: flex;
-      gap: 1rem;
+      gap: 2.5rem;
       font-size: 1.8rem;
 
       a {
         font-weight: 600;
-        color: rgb(125, 121, 121);
+        color: rgb(121, 121, 121);
+      }
+
+      a:hover {
+        color: #ff4500;
       }
     }
   }
@@ -90,9 +98,9 @@ header {
     object-fit: cover;
   }
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     padding-left: 1rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
   }
 }
 
@@ -101,7 +109,7 @@ header {
   flex-direction: column;
   gap: 1.8rem;
   padding: 1rem;
-  border: 0.1rem solid gray;
+  border: 0.1rem solid rgb(208, 206, 206);
   cursor: pointer;
 
   .item-icon {
@@ -110,16 +118,16 @@ header {
     right: 0;
     width: 4rem;
     height: 4rem;
-    border-left: 0.1rem solid gray;
-    border-bottom: 0.1rem solid gray;
+    border-left: 0.1rem solid rgb(208, 206, 206);
+    border-bottom: 0.1rem solid rgb(208, 206, 206);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: orange;
+    color: #ff581a;
   }
 
   .item-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   span {
@@ -127,27 +135,41 @@ header {
   }
 
   .item-price {
-    font-weight: 600;
-    color: orange;
+    font-weight: 700;
+    color: #ff581a;
   }
+}
+
+.item-box:hover {
+  background-color: #ffdacc;
 }
 
 /* #endregion MENU-SECTION */
 
+/* #region BASKET-SECTION */
+
 .basket-wrapper {
   width: 25%;
   flex-grow: 1;
-  border: 0.2rem solid black;
-
+  box-shadow: -6px 13px 15px -1px rgba(0, 0, 0, 0.16);
   .basket {
     width: 100%;
-    background-color: antiquewhite;
     position: sticky;
     top: 0;
+
+    .basket-title {
+      display: flex;
+      justify-content: center;
+      padding: 3rem;
+      font-size: 2rem;
+      border-bottom: 0.1rem solid rgb(156, 154, 154);
+    }
   }
 }
+/* #endregion BASKET-SECTION */
 
 footer {
   height: 10vh;
-  background-color: red;
+  background-color: #ff581a;
+  border-top: 0.2rem solid rgb(121, 121, 121);
 }

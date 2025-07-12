@@ -13,6 +13,11 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+body {
+  background-color: #ff581a;
+  color: rgb(20, 20, 20);
+}
+
 .container {
   width: 100%;
   max-width: 1920px;
@@ -22,5 +27,5 @@ html {
 .flex-column {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.6rem;
 }
