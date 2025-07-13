@@ -20,10 +20,35 @@ export class RenderItems {
       itemBox.addEventListener("click", () => {
         this.addToBasket(item);
         this.renderBasket("basket-list");
-        console.log("Basket:", basket);
       });
 
       container.appendChild(itemBox);
+    });
+  }
+
+  renderNavbar() {
+    const navToggle = document.getElementById("nav-toggle");
+    const navList = document.getElementById("nav-list");
+    const items = navList.querySelectorAll("li");
+
+    let currentIndex = 0;
+
+    // Am Anfang alle außer dem ersten verstecken
+    items.forEach((item, index) => {
+      if (index !== 0) {
+        item.style.display = "none";
+      }
+    });
+
+    navToggle.addEventListener("click", () => {
+      // Aktuelles Element verstecken
+      items[currentIndex].style.display = "none";
+
+      // Index hochzählen
+      currentIndex = (currentIndex + 1) % items.length;
+
+      // Neues Element anzeigen
+      items[currentIndex].style.display = "list-item";
     });
   }
 
@@ -49,6 +74,8 @@ export class RenderItems {
       const totalBox = Template.createTotalBox(basket);
       payBoxContainer.appendChild(totalBox);
     }
+
+    this.PayButtonListener();
   }
   // #endregion RENDER-METHODS
 
@@ -117,7 +144,7 @@ export class RenderItems {
   }
   // #endregion LISTENER-FOR-BASKET-ICONS
 
-  // LISTENER-FOR-MOBILE-TOGGLE
+  // #region LISTENER-FOR-MOBILE-TOGGLE
   mobileToggleListener() {
     const mobileToggle = document.getElementById("mobile-toggle");
     const basketWrapper = document.querySelector(".basket-wrapper");
@@ -137,6 +164,23 @@ export class RenderItems {
         document.body.classList.remove("no-scroll");
         basketWrapper.classList.remove("fullscreen");
       }
+    });
+  }
+  // #endregion
+
+  PayButtonListener() {
+    const payButton = document.getElementById("pay-now-button");
+    const overlay = document.getElementById("payment-overlay");
+    const closeBtn = document.getElementById("close-overlay");
+
+    payButton.addEventListener("click", () => {
+      overlay.classList.remove("hidden");
+      basket.length = 0;
+      this.renderBasket("basket-list");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.add("hidden");
     });
   }
 }

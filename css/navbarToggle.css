@@ -1,0 +1,13 @@
+#nav-list li {
+  display: list-item;
+}
+
+@media (max-width: 768px) {
+  #nav-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+*/ #nav-list li.active {
+  display: list-item;
+}

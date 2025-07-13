@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="globalSettings.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/basketWrapper.css" />
+    <link rel="stylesheet" href="css/navbarToggle.css" />
+    <link rel="stylesheet" href="css/paymentOverlay.css" />
     <title>Bestell App</title>
   </head>
   <body>
@@ -47,7 +49,8 @@
               <img src="assets/Logo/app-logo.jpg" alt="" class="app-logo" />
             </div>
             <div class="navigation-bar">
-              <div>
+              <span>Kategorie:</span>
+              <div id="nav-toggle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="nav-icon"
@@ -63,8 +66,9 @@
                   />
                 </svg>
               </div>
+
               <nav>
-                <ul>
+                <ul id="nav-list">
                   <li><a href="#Main">Hauptgerichte</a></li>
                   <li><a href="#Side">Beilagen</a></li>
                   <li><a href="#Desserts">Desserts</a></li>
@@ -129,6 +133,16 @@
         <div id="mobile-basket" class="container">
           <button id="mobile-toggle">Warenkorb</button>
         </div>
+
+        <!-- #region Bezahlt OVERLAY -->
+        <div id="payment-overlay" class="payment-overlay hidden">
+          <div class="payment-message">
+            <h2>Vielen Dank!</h2>
+            <p>Deine Bestellung wurde erfolgreich bezahlt.</p>
+            <button id="close-overlay">Schließen</button>
+          </div>
+        </div>
+        <!-- #endregion Bezahlt OVERLAY -->
       </div>
     </main>
     <footer>

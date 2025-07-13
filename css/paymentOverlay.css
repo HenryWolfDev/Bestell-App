@@ -1,0 +1,47 @@
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.payment-overlay.hidden {
+  display: none;
+}
+
+.payment-message {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 40rem;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+.payment-message button {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  background: rgb(108, 151, 251);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.payment-message button:hover {
+  background: rgb(100, 139, 229);
+}

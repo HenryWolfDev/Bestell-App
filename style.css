@@ -6,7 +6,7 @@ header {
   .logo {
     color: white;
     width: 20rem;
-    height: 6rem;
+    height: 8rem;
   }
 }
 
@@ -38,7 +38,16 @@ header {
       top: 65%;
       left: 50%;
       transform: translate(-50%, -50%);
-      border: 0.2rem solid rgb(255, 255, 255);
+      border: 0.2rem solid rgb(244, 242, 242);
+    }
+
+    @media (max-width: 740px) {
+      .app-logo {
+        width: 14rem;
+        height: 14rem;
+        top: 47%;
+        left: 50%;
+      }
     }
 
     .hero-app-info {
@@ -66,10 +75,17 @@ header {
     background-color: #ffdacc;
     padding: 0 1rem;
 
+    span {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: rgb(121, 121, 121);
+    }
+
     .nav-icon {
       width: 6rem;
       height: 6rem;
       color: #ff581a;
+      cursor: pointer;
     }
     ul {
       display: flex;
@@ -151,7 +167,8 @@ header {
 .basket-wrapper {
   width: 25%;
   flex-grow: 1;
-  box-shadow: -6px 13px 15px -1px rgba(0, 0, 0, 0.16);
+  box-shadow: -6px 13px 15px -1px rgba(0, 0, 0, 0.2);
+
   .basket {
     width: 100%;
     position: sticky;
@@ -162,12 +179,15 @@ header {
       justify-content: center;
       padding: 2rem;
       color: white;
+      border: 1rem solid rgb(244, 242, 242);
       background-color: rgb(108, 151, 251);
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 600;
     }
 
     #basket-list {
+      max-height: 44rem;
+      overflow-y: auto;
       padding: 2rem 1rem;
       border-bottom: 0.1rem solid rgb(208, 206, 206);
       display: flex;
@@ -184,7 +204,7 @@ header {
         }
 
         span {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
         }
 
         .change-box {
@@ -227,12 +247,17 @@ header {
 
         #pay-now-button {
           border-style: none;
-          padding: 1.5rem;
-          color: white;
-          background-color: rgb(108, 151, 251);
-          font-size: 2.8rem;
+          font-size: 2rem;
           font-weight: 600;
+          background-color: rgb(108, 151, 251);
+          color: #ffffff;
+          padding: 0.7em 2em;
+          transition: 0.3s ease all;
           cursor: pointer;
+        }
+
+        #pay-now-button:active {
+          transform: scale(0.9);
         }
       }
     }
