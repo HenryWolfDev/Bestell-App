@@ -194,7 +194,7 @@ header {
   flex-grow: 1;
   background-color: var(--background-light);
   border-radius: 0.25rem;
-  box-shadow: 5px 13px 15px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 13px 15px 5px rgba(0, 0, 0, 0.2);
 
   .basket {
     width: 100%;
