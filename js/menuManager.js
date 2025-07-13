@@ -116,4 +116,27 @@ export class RenderItems {
     }
   }
   // #endregion LISTENER-FOR-BASKET-ICONS
+
+  // LISTENER-FOR-MOBILE-TOGGLE
+  mobileToggleListener() {
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const basketWrapper = document.querySelector(".basket-wrapper");
+
+    mobileToggle.addEventListener("click", () => {
+      basketWrapper.classList.toggle("fullscreen");
+      document.body.classList.add("no-scroll");
+    });
+  }
+
+  mobileToggleCloseListener() {
+    const titleToggle = document.querySelector(".basket-title");
+    const basketWrapper = document.querySelector(".basket-wrapper");
+
+    titleToggle.addEventListener("click", () => {
+      if (basketWrapper.classList.contains("fullscreen")) {
+        document.body.classList.remove("no-scroll");
+        basketWrapper.classList.remove("fullscreen");
+      }
+    });
+  }
 }

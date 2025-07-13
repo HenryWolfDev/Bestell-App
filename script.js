@@ -8,3 +8,6 @@ renderItems.renderCategory("Hauptgericht", "main-courses");
 renderItems.renderCategory("Beilagen", "side-dishes");
 renderItems.renderCategory("Dessert", "desserts");
 renderItems.renderCategory("Getränke", "drinks");
+
+renderItems.mobileToggleListener();
+renderItems.mobileToggleCloseListener();

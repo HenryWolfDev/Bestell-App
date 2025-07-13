@@ -160,9 +160,11 @@ header {
     .basket-title {
       display: flex;
       justify-content: center;
-      padding: 3rem;
-      font-size: 2rem;
-      border-bottom: 0.1rem solid rgb(208, 206, 206);
+      padding: 2rem;
+      color: white;
+      background-color: rgb(108, 151, 251);
+      font-size: 2.8rem;
+      font-weight: 600;
     }
 
     #basket-list {
@@ -204,21 +206,33 @@ header {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      padding: 1rem 1rem;
+      padding: 2rem 1rem;
       div {
         display: flex;
         justify-content: space-between;
 
         span {
           font-size: 2rem;
-          color: rgb(121, 121, 121);
+          color: rgb(41, 40, 40);
         }
       }
-      div:last-child {
+      .total-box {
         font-weight: bold;
+      }
 
-        span {
-          color: rgb(20, 20, 20);
+      .pay-button-box {
+        display: flex;
+        justify-content: center;
+        padding-top: 1rem;
+
+        #pay-now-button {
+          border-style: none;
+          padding: 1.5rem;
+          color: white;
+          background-color: rgb(108, 151, 251);
+          font-size: 2.8rem;
+          font-weight: 600;
+          cursor: pointer;
         }
       }
     }
@@ -230,9 +244,23 @@ footer {
   height: 10vh;
   background-color: #ff581a;
   border-top: 0.2rem solid rgb(208, 206, 206);
+  display: flex;
+  align-items: center;
 
-  .footer-logo {
-    width: 20rem;
-    object-fit: cover;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    .footer-logo {
+      width: 20rem;
+      object-fit: cover;
+    }
+
+    p {
+      font-size: 1.6rem;
+      color: white;
+      text-align: center;
+    }
   }
 }

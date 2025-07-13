@@ -85,7 +85,9 @@ export class Template {
 
     // Gesamt
     const totalBox = document.createElement("div");
+    totalBox.classList.add("total-box");
     const totalTitle = document.createElement("span");
+
     totalTitle.textContent = `Gesamt`;
     const fullPrice = document.createElement("span");
     fullPrice.textContent = CalcUtility.calcTotalEverything(basket);
@@ -93,9 +95,19 @@ export class Template {
     totalBox.appendChild(totalTitle);
     totalBox.appendChild(fullPrice);
 
+    // Bezahl-Button
+    const payNow = document.createElement("div");
+    payNow.classList.add("pay-button-box");
+    const payButton = document.createElement("button");
+    payButton.id = "pay-now-button";
+    payButton.textContent = "Jetzt bezahlen";
+
+    payNow.appendChild(payButton);
+
     container.appendChild(subtotalBox);
     container.appendChild(deliveryBox);
     container.appendChild(totalBox);
+    container.appendChild(payNow);
 
     return container;
   }
