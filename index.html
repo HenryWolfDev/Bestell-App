@@ -3,41 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>Bestell App</title>
     <link
       rel="icon"
       href="assets/Favicon/favicon-16x16.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="globalSettings.css" />
+    <link rel="stylesheet" href="css/globalSettings.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/basketWrapper.css" />
     <link rel="stylesheet" href="css/navbarToggle.css" />
     <link rel="stylesheet" href="css/paymentOverlay.css" />
-    <title>Bestell App</title>
   </head>
   <body>
     <header>
       <div class="container">
-        <img src="assets/Logo/Bestell App- Logo.svg" alt="" class="logo" />
+        <img
+          src="assets/Logo/Bestell App- Logo.svg"
+          alt="Bestell App Logo"
+          class="logo"
+        />
       </div>
     </header>
+
     <main>
       <div class="container">
+        <!-- #region MENU-ANZEIGE -->
         <div class="content-wrapper">
           <section class="content">
             <div class="content-hero">
               <div>
                 <img
                   src="assets/images/food-hero.jpg"
-                  alt=""
+                  alt="Hero Food Bild"
                   class="hero-picture"
                 />
               </div>
@@ -45,9 +43,13 @@
                 <h2>Pizza - Makarna</h2>
                 <span>Bewertung (4.6 von 5 Sternen)</span>
               </div>
-
-              <img src="assets/Logo/app-logo.jpg" alt="" class="app-logo" />
+              <img
+                src="assets/Logo/app-logo.jpg"
+                alt="App Logo"
+                class="app-logo"
+              />
             </div>
+            <!-- #region NAVIGATION BAR -->
             <div class="navigation-bar">
               <span>Kategorie:</span>
               <div id="nav-toggle">
@@ -66,7 +68,6 @@
                   />
                 </svg>
               </div>
-
               <nav>
                 <ul id="nav-list">
                   <li><a href="#Main">Hauptgerichte</a></li>
@@ -76,65 +77,107 @@
                 </ul>
               </nav>
             </div>
-
-            <!-- #region MENU-BOX -->
+            <!-- #endregion NAVIGATION BAR -->
+            <!-- #region MENU RENDER-BOX -->
             <div id="Main" class="menu-box">
               <img
                 src="assets/images/main-courses-logo.jpg"
-                alt=""
+                alt="Hauptgerichte Logo"
                 class="menu-dish-logo"
               />
-              <h2>Hauptgerichte</h2>
+              <div class="menu-title-box">
+                <h2>Hauptgerichte</h2>
+              </div>
               <div id="main-courses" class="flex-column"></div>
             </div>
+
             <div id="Side" class="menu-box">
               <img
                 src="assets/images/side-dishes-logo.jpg"
-                alt=""
+                alt="Beilagen Logo"
                 class="menu-dish-logo"
               />
               <h2>Beilagen</h2>
               <div id="side-dishes" class="flex-column"></div>
             </div>
+
             <div id="Desserts" class="menu-box">
               <img
                 src="assets/images/dessert-logo.jpg"
-                alt=""
+                alt="Desserts Logo"
                 class="menu-dish-logo"
               />
               <h2>Desserts</h2>
               <div id="desserts" class="flex-column"></div>
             </div>
+
             <div id="Drinks" class="menu-box">
               <img
                 src="assets/images/drinks-logo.jpg"
-                alt=""
+                alt="Getränke Logo"
                 class="menu-dish-logo"
               />
               <h2>Getränke</h2>
               <div id="drinks" class="flex-column"></div>
             </div>
-            <!-- #endregion MENU-BOX -->
+            <!-- #endregion MENU RENDER-BOX -->
           </section>
 
-          <!-- #region Warenkorb -->
+          <!-- #region WARENKORB -->
           <section class="basket-wrapper">
             <div class="basket">
               <div class="basket-title">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="basket-logo"
+                  viewBox="0 0 512 512"
+                >
+                  <circle
+                    cx="176"
+                    cy="416"
+                    r="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="32"
+                  />
+                  <circle
+                    cx="400"
+                    cy="416"
+                    r="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="32"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="32"
+                    d="M48 80h64l48 272h256"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="32"
+                    d="M160 288h249.44a8 8 0 007.85-6.43l28.8-144a8 8 0 00-7.85-9.57H128"
+                  />
+                </svg>
                 <h2>Warenkorb</h2>
               </div>
               <div id="basket-list"></div>
               <div id="basket-total-list"></div>
             </div>
           </section>
-          <!-- #endregion Warenkorb -->
+          <!-- #endregion WARENKORB -->
         </div>
+        <!-- #endregion MENU-ANZEIGE -->
 
+        <!-- #region TOGGLE ANZEIGE WARENKORB -->
         <div id="mobile-basket" class="container">
           <button id="mobile-toggle">Warenkorb</button>
         </div>
+        <!-- #endregion TOGGLE ANZEIGE WARENKORB -->
 
-        <!-- #region Bezahlt OVERLAY -->
+        <!-- #region BEZAHL OVERLAY -->
         <div id="payment-overlay" class="payment-overlay hidden">
           <div class="payment-message">
             <h2>Vielen Dank!</h2>
@@ -142,17 +185,23 @@
             <button id="close-overlay">Schließen</button>
           </div>
         </div>
-        <!-- #endregion Bezahlt OVERLAY -->
+        <!-- #endregion BEZAHL OVERLAY -->
       </div>
     </main>
+
     <footer>
       <div class="container">
         <div>
-          <img src="assets/Logo/Logo.png" alt="" class="footer-logo" />
+          <img
+            src="assets/Logo/Logo.png"
+            alt="Footer Logo"
+            class="footer-logo"
+          />
           <p>&copy; 2025 Bestell App. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>
-    <script type="module" src="script.js "></script>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>

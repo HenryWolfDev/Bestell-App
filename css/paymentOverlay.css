@@ -16,7 +16,7 @@
 }
 
 .payment-message {
-  background: white;
+  background: var(--background-light);
   padding: 3rem;
   border-radius: 1rem;
   text-align: center;
@@ -36,12 +36,12 @@
   margin-top: 1.5rem;
   padding: 1rem 2rem;
   border: none;
-  background: rgb(108, 151, 251);
+  background: var(--primary-color);
   color: white;
   cursor: pointer;
   border-radius: 4px;
 }
 
 .payment-message button:hover {
-  background: rgb(100, 139, 229);
+  background: var(--hover-color);
 }

@@ -37,6 +37,8 @@ export class Template {
     const changeBox = document.createElement("div");
     changeBox.classList.add("change-box");
 
+    const moveBox = document.createElement("div");
+
     const add = Template.createAddIcon();
     const remove = Template.createRemoveIcon();
     const trash = Template.createTrashIcon();
@@ -44,12 +46,14 @@ export class Template {
     const quantity = document.createElement("span");
     quantity.textContent = `${item.quantity}x`;
 
+    moveBox.appendChild(remove);
+    moveBox.appendChild(quantity);
+    moveBox.appendChild(add);
+
     const sum = document.createElement("span");
     sum.innerHTML = CalcUtility.calcItemSum(item.price, item.quantity);
 
-    changeBox.appendChild(remove);
-    changeBox.appendChild(quantity);
-    changeBox.appendChild(add);
+    changeBox.appendChild(moveBox);
     changeBox.appendChild(sum);
     changeBox.appendChild(trash);
 
@@ -96,18 +100,24 @@ export class Template {
     totalBox.appendChild(fullPrice);
 
     // Bezahl-Button
-    const payNow = document.createElement("div");
-    payNow.classList.add("pay-button-box");
+    const payNowBox = document.createElement("div");
+    payNowBox.classList.add("pay-button-box");
+
     const payButton = document.createElement("button");
     payButton.id = "pay-now-button";
     payButton.textContent = "Jetzt bezahlen";
 
-    payNow.appendChild(payButton);
+    const cardIcon = Template.createCardIcon();
+    cardIcon.classList.add("card-icon");
+
+    payButton.appendChild(cardIcon);
+
+    payNowBox.appendChild(payButton);
 
     container.appendChild(subtotalBox);
     container.appendChild(deliveryBox);
     container.appendChild(totalBox);
-    container.appendChild(payNow);
+    container.appendChild(payNowBox);
 
     return container;
   }
@@ -136,7 +146,14 @@ export class Template {
   static createTrashIcon() {
     const icon = document.createElement("span");
     icon.classList.add("basket-icon", "delete-from-basket");
-    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 112h352"/><path d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>`;
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M432 144l-28.67 275.74A32 32 0 01371.55 448H140.46a32 32 0 01-31.78-28.26L80 144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><rect x="32" y="64" width="448" height="80" rx="16" ry="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M312 240L200 352M312 352L200 240"/></svg>`;
     return icon;
+  }
+
+  static createCardIcon() {
+    const card = document.createElement("span");
+    card.classList.add("card-icon");
+    card.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><rect x="48" y="96" width="416" height="320" rx="56" ry="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="60" d="M48 192h416M128 300h48v20h-48z"/></svg>`;
+    return card;
   }
 }
