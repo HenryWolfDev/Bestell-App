@@ -29,9 +29,10 @@
     <main>
       <div class="container">
         <!-- #region MENU-ANZEIGE -->
-        <div class="content-wrapper">
-          <section class="content">
-            <div class="content-hero">
+        <div class="full-menu-content">
+          <section class="menu-content">
+            <!-- #region MENU-HERO -->
+            <div class="menu-hero">
               <div>
                 <img
                   src="assets/images/food-hero.jpg"
@@ -49,6 +50,7 @@
                 class="app-logo"
               />
             </div>
+            <!-- #endregion MENU-HERO -->
             <!-- #region NAVIGATION BAR -->
             <div class="navigation-bar">
               <span>Kategorie:</span>
@@ -79,7 +81,7 @@
             </div>
             <!-- #endregion NAVIGATION BAR -->
             <!-- #region MENU RENDER-BOX -->
-            <div id="Main" class="menu-box">
+            <div class="menu-box">
               <img
                 src="assets/images/main-courses-logo.jpg"
                 alt="Hauptgerichte Logo"
@@ -91,7 +93,7 @@
               <div id="main-courses" class="flex-column"></div>
             </div>
 
-            <div id="Side" class="menu-box">
+            <div class="menu-box">
               <img
                 src="assets/images/side-dishes-logo.jpg"
                 alt="Beilagen Logo"
@@ -101,7 +103,7 @@
               <div id="side-dishes" class="flex-column"></div>
             </div>
 
-            <div id="Desserts" class="menu-box">
+            <div class="menu-box">
               <img
                 src="assets/images/dessert-logo.jpg"
                 alt="Desserts Logo"
@@ -111,7 +113,7 @@
               <div id="desserts" class="flex-column"></div>
             </div>
 
-            <div id="Drinks" class="menu-box">
+            <div class="menu-box">
               <img
                 src="assets/images/drinks-logo.jpg"
                 alt="Getränke Logo"
@@ -177,7 +179,7 @@
         </div>
         <!-- #endregion TOGGLE ANZEIGE WARENKORB -->
 
-        <!-- #region BEZAHL OVERLAY -->
+        <!-- #region TOGGLE BEZAHL OVERLAY -->
         <div id="payment-overlay" class="payment-overlay hidden">
           <div class="payment-message">
             <h2>Vielen Dank!</h2>
@@ -185,7 +187,7 @@
             <button id="close-overlay">Schließen</button>
           </div>
         </div>
-        <!-- #endregion BEZAHL OVERLAY -->
+        <!-- #endregion TOGGLE BEZAHL OVERLAY -->
       </div>
     </main>
 

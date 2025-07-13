@@ -39,7 +39,8 @@
   background: var(--primary-color);
   color: white;
   cursor: pointer;
-  border-radius: 4px;
+
+  border-radius: 0.5rem;
 }
 
 .payment-message button:hover {

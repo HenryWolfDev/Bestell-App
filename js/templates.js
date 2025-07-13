@@ -15,7 +15,7 @@ export class Template {
 
     const price = document.createElement("span");
     price.classList.add("item-price");
-    price.textContent = `${item.price.toFixed(2)}€`;
+    price.textContent = `${item.price.toFixed(2).replace(".", ",")}€`;
 
     const icon = Template.createAddIconItemBox();
 
@@ -46,6 +46,7 @@ export class Template {
     const quantity = document.createElement("span");
     quantity.textContent = `${item.quantity}x`;
 
+    moveBox.appendChild(trash);
     moveBox.appendChild(remove);
     moveBox.appendChild(quantity);
     moveBox.appendChild(add);
@@ -54,8 +55,8 @@ export class Template {
     sum.innerHTML = CalcUtility.calcItemSum(item.price, item.quantity);
 
     changeBox.appendChild(moveBox);
+    // changeBox.appendChild(trash);
     changeBox.appendChild(sum);
-    changeBox.appendChild(trash);
 
     itemLine.appendChild(name);
     itemLine.appendChild(changeBox);
@@ -82,7 +83,7 @@ export class Template {
     const deliveryTitle = document.createElement("span");
     deliveryTitle.textContent = `Lieferkosten`;
     const deliveryPrice = document.createElement("span");
-    deliveryPrice.textContent = `5.00€`;
+    deliveryPrice.textContent = `5,00€`;
 
     deliveryBox.appendChild(deliveryTitle);
     deliveryBox.appendChild(deliveryPrice);

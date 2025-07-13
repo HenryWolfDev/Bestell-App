@@ -1,6 +1,6 @@
 export class CalcUtility {
   static calcItemSum(price, quantity) {
-    const sum = (price * quantity).toFixed(2) + "€";
+    const sum = (price * quantity).toFixed(2).replace(".", ",") + "€";
     return sum;
   }
 
@@ -9,7 +9,7 @@ export class CalcUtility {
       (acc, item) => acc + item.price * item.quantity,
       0
     );
-    return total.toFixed(2) + "€";
+    return total.toFixed(2).replace(".", ",") + "€";
   }
 
   static calcTotalEverything(basket) {
@@ -18,6 +18,6 @@ export class CalcUtility {
       0
     );
     const totalWithDelivery = itemsTotal + 5;
-    return totalWithDelivery.toFixed(2) + "€";
+    return totalWithDelivery.toFixed(2).replace(".", ",") + "€";
   }
 }

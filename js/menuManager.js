@@ -33,7 +33,7 @@ export class RenderItems {
 
     let currentIndex = 0;
 
-    // Am Anfang alle außer dem ersten verstecken
+    // Zeigt nur das Erste Element an
     items.forEach((item, index) => {
       if (index !== 0) {
         item.style.display = "none";
@@ -54,7 +54,7 @@ export class RenderItems {
 
   renderBasket(containerID) {
     const container = document.getElementById(containerID);
-    container.innerHTML = ""; // vorher leeren
+    container.innerHTML = "";
 
     basket.forEach((item) => {
       const itemLine = Template.createBasketItem(item);
@@ -92,7 +92,7 @@ export class RenderItems {
     }
   }
 
-  // #region LISTENER-FOR-BASKET-ICONS
+  // #region LISTENER
   addToBasketElementListener(icon, item) {
     icon.addEventListener("click", () => {
       const existingItem = basket.find((element) => element.name === item.name);
@@ -142,9 +142,7 @@ export class RenderItems {
       this.deleteFromBasketListener(deleteIcon, item);
     }
   }
-  // #endregion LISTENER-FOR-BASKET-ICONS
 
-  // #region LISTENER-FOR-MOBILE-TOGGLE
   mobileToggleListener() {
     const mobileToggle = document.getElementById("mobile-toggle");
     const basketWrapper = document.querySelector(".basket-wrapper");
@@ -166,7 +164,6 @@ export class RenderItems {
       }
     });
   }
-  // #endregion
 
   PayButtonListener() {
     const payButton = document.getElementById("pay-now-button");
@@ -175,6 +172,7 @@ export class RenderItems {
 
     payButton.addEventListener("click", () => {
       overlay.classList.remove("hidden");
+      // Löscht basket Elemente komplett
       basket.length = 0;
       this.renderBasket("basket-list");
     });
@@ -183,4 +181,5 @@ export class RenderItems {
       overlay.classList.add("hidden");
     });
   }
+  // #endregion
 }
