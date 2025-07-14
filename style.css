@@ -56,7 +56,7 @@ header {
       transform: translate(-50%, -50%);
       border: 0.2rem solid var(--border-light);
 
-      @media (max-width: 740px) {
+      @media (max-width: 800px) {
         & {
           width: 14rem;
           height: 14rem;
@@ -74,6 +74,16 @@ header {
       h2 {
         font-size: 3.5rem;
         padding-top: 2rem;
+      }
+
+      @media (max-width: 360px) {
+        h2 {
+          font-size: 3rem;
+        }
+
+        span {
+          font-size: 1.6rem;
+        }
       }
 
       span {
@@ -116,6 +126,12 @@ header {
         &:hover {
           color: var(--hover-color);
         }
+      }
+    }
+
+    @media (max-width: 360px) {
+      ul {
+        font-size: 1.6rem;
       }
     }
   }
@@ -163,7 +179,7 @@ header {
     justify-content: center;
     align-items: center;
     color: var(--primary-color);
-    filter: drop-shadow(0 0 0.1rem #f25319);
+    filter: drop-shadow(0 0 0.1rem var(--hover-color));
   }
 
   .item-title {
