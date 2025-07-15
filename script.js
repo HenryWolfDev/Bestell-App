@@ -10,5 +10,5 @@ renderItems.renderCategory("Dessert", "desserts");
 renderItems.renderCategory("Getränke", "drinks");
 
 renderItems.renderNavbar();
+renderItems.renderTotal();
 renderItems.mobileToggleListener();
-renderItems.mobileToggleCloseListener();

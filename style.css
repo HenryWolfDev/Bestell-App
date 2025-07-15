@@ -180,6 +180,7 @@ header {
     align-items: center;
     color: var(--primary-color);
     filter: drop-shadow(0 0 0.1rem var(--hover-color));
+    transition: 1.5s ease all;
   }
 
   .item-title {
@@ -198,6 +199,10 @@ header {
 
   &:hover {
     background-color: var(--secondary-color);
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 }
 /* #endregion */

@@ -13,11 +13,17 @@ export class CalcUtility {
   }
 
   static calcTotalEverything(basket) {
-    const itemsTotal = basket.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-      0
-    );
-    const totalWithDelivery = itemsTotal + 5;
-    return totalWithDelivery.toFixed(2).replace(".", ",") + "€";
+    let totalWithDelivery = 0;
+
+    if (basket.length > 0) {
+      const itemsTotal = basket.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+      totalWithDelivery = itemsTotal + 5;
+      return totalWithDelivery.toFixed(2).replace(".", ",") + "€";
+    } else {
+      return totalWithDelivery.toFixed(2).replace(".", ",") + "€";
+    }
   }
 }

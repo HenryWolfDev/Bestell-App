@@ -70,12 +70,12 @@ export class RenderItems {
     const payBoxContainer = document.getElementById("basket-total-list");
     payBoxContainer.innerHTML = "";
 
-    if (basket.length > 0) {
-      const totalBox = Template.createTotalBox(basket);
-      payBoxContainer.appendChild(totalBox);
-    }
+    const totalBox = Template.createTotalBox(basket);
+    payBoxContainer.appendChild(totalBox);
 
-    this.PayButtonListener();
+    if (basket.length > 0) {
+      this.PayButtonListener();
+    }
   }
   // #endregion RENDER-METHODS
 
@@ -107,8 +107,14 @@ export class RenderItems {
   removeFromBasketListener(icon, item) {
     icon.addEventListener("click", () => {
       const existingItem = basket.find((element) => element.name === item.name);
+
       if (existingItem && existingItem.quantity > 1) {
         existingItem.quantity -= 1;
+      } else {
+        const index = basket.findIndex((element) => element.name === item.name);
+        if (index >= 0) {
+          basket.splice(index, 1);
+        }
       }
 
       this.renderBasket("basket-list");
@@ -146,22 +152,22 @@ export class RenderItems {
   mobileToggleListener() {
     const mobileToggle = document.getElementById("mobile-toggle");
     const basketWrapper = document.querySelector(".basket-wrapper");
+    const basketTitle = document.querySelector(".basket-title");
 
     mobileToggle.addEventListener("click", () => {
       basketWrapper.classList.toggle("fullscreen");
       document.body.classList.add("no-scroll");
-    });
-  }
 
-  mobileToggleCloseListener() {
-    const titleToggle = document.querySelector(".basket-title");
-    const basketWrapper = document.querySelector(".basket-wrapper");
-
-    titleToggle.addEventListener("click", () => {
-      if (basketWrapper.classList.contains("fullscreen")) {
+      // Icon erstellen
+      const closeIcon = Template.createClosIcon();
+      // Direkt Listener hinzufügen
+      closeIcon.addEventListener("click", () => {
         document.body.classList.remove("no-scroll");
         basketWrapper.classList.remove("fullscreen");
-      }
+        closeIcon.remove(); // Icon entfernen, falls gewünscht
+      });
+
+      basketTitle.appendChild(closeIcon);
     });
   }
 

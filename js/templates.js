@@ -123,6 +123,8 @@ export class Template {
     return container;
   }
 
+  static createTotalEmptyBox() {}
+
   static createAddIconItemBox() {
     const icon = document.createElement("div");
     icon.classList.add("item-icon");
@@ -156,5 +158,12 @@ export class Template {
     card.classList.add("card-icon");
     card.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><rect x="48" y="96" width="416" height="320" rx="56" ry="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="60" d="M48 192h416M128 300h48v20h-48z"/></svg>`;
     return card;
+  }
+
+  static createClosIcon() {
+    const icon = document.createElement("div");
+    icon.classList.add("close-icon");
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>`;
+    return icon;
   }
 }
