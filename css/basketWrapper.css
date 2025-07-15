@@ -1,7 +1,7 @@
 #mobile-basket {
   display: none;
 
-  background-color: var(--background-light);
+  /* background-color: var(--background-light); */
   text-align: center;
   padding: 1.5rem;
   font-size: 1.8rem;
@@ -22,6 +22,33 @@
 @media (max-width: 1180px) {
   #mobile-basket {
     display: block;
+    position: fixed;
+    top: 5;
+    left: 0;
+    bottom: 30rem;
+
+    .mobile-basket-logo-hidden {
+      display: none;
+    }
+    .mobile-basket-logo {
+      width: 4rem;
+      height: 4rem;
+      color: white;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: auto;
+      height: 8rem;
+      border: 0.1rem solid rgb(236, 208, 208);
+      border-radius: 10rem;
+      box-shadow: 2px 13px 15px 5px rgba(0, 0, 0, 0.2);
+    }
+    button:hover {
+      background-color: var(--hover-color);
+    }
   }
 
   .basket-wrapper {

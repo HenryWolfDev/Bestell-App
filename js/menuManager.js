@@ -187,5 +187,6 @@ export class RenderItems {
       overlay.classList.add("hidden");
     });
   }
+
   // #endregion
 }
